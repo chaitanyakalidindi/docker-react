@@ -6,7 +6,7 @@ services:
  install: travis_wait mvn install
 
 before_install:
-  - docker build -t kschaitanya22/docker-react -f Dockerfile.dev .
+  - docker build -t chaitanyakalidindi/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run kschaitanya22/docker-react npm run test -- --coverage
+  - docker run -e CI=true chaitanyakalidindi/docker-react npm test
